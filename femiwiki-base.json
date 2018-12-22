@@ -1,0 +1,25 @@
+{
+  "builders": [{
+    "type": "amazon-ebs",
+    "region": "ap-northeast-1",
+    "source_ami_filter": {
+      "filters": {
+        "virtualization-type": "hvm",
+        "name": "amzn2-ami-hvm-*-x86_64-gp2",
+        "root-device-type": "ebs"
+      },
+      "owners": ["137112412989"],
+      "most_recent": true
+    },
+    "instance_type": "t3.nano",
+    "ssh_username": "ec2-user",
+    "ami_name": "femiwiki-base {{isotime \"2006-01-02\"}}"
+  }],
+  "provisioners": [
+    {
+      "type": "shell",
+      "script": "bootstrap.sh",
+      "execute_command": "{{.Vars}} sudo -E -S bash '{{.Path}}'"
+    }
+  ]
+}

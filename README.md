@@ -4,8 +4,7 @@ Femiwiki Base AMI
 페미위키에서 쓰는 기본 AMI
 
 ```
-# TODO
-packer
+packer build femiwiki-base.json
 ```
 
 &nbsp;
