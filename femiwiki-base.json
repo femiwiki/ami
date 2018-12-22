@@ -25,7 +25,6 @@
     "ami_description": "Base AMI for Femiwiki",
     "ami_virtualization_type": "hvm",
     "ebs_optimized": true,
-    "ena_support": true,
     "spot_price": "auto",
     "spot_price_auto_product": "Linux/UNIX (Amazon VPC)"
   }],
