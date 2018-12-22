@@ -1,8 +1,12 @@
 #!/bin/bash
 set -euo pipefail; IFS=$'\n\t'
 
+#
+# 기본 유틸리티들 설치
+#
 sudo yum update -y
 sudo yum install -y htop tmux git
+sudo amazon-linux-extras install -y vim
 
 #
 # ripgrep 설치
