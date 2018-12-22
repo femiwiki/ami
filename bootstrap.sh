@@ -11,7 +11,7 @@ sudo amazon-linux-extras install -y vim
 #
 # ripgrep 설치
 #
-wget -O /tmp/ripgrep.tgz 'https://github.com/BurntSushi/ripgrep/releases/download/0.10.0/ripgrep-0.10.0-x86_64-unknown-linux-musl.tar.gz'
+curl -Lo /tmp/ripgrep.tgz 'https://github.com/BurntSushi/ripgrep/releases/download/0.10.0/ripgrep-0.10.0-x86_64-unknown-linux-musl.tar.gz'
 sudo tar -x \
   --strip-component=1 \
   -C /usr/local/bin/ \
