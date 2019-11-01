@@ -26,7 +26,6 @@ rm /tmp/ripgrep.tgz
 #
 sudo amazon-linux-extras install -y docker
 sudo systemctl enable docker
-sudo systemctl start docker
 sudo usermod -a -G docker ec2-user
 # 이후 로그아웃한 뒤 재로그인
 
