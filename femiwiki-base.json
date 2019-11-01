@@ -11,6 +11,7 @@
       "owners": ["137112412989"],
       "most_recent": true
     },
+    "ssh_interface": "public_ip",
     "ssh_username": "ec2-user",
     "ami_name": "femiwiki-base {{isotime \"2006-01-02\"}}",
     "launch_block_device_mappings": [
