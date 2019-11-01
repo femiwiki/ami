@@ -5,7 +5,7 @@ set -euo pipefail; IFS=$'\n\t'
 # 기본 유틸리티들 설치
 #
 sudo yum update -y
-sudo yum install -y htop tmux git
+sudo yum install -y htop tmux git 'https://www.atoptool.nl/download/atop-2.4.0-1.x86_64.rpm'
 sudo amazon-linux-extras install -y vim
 
 #
