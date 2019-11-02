@@ -5,8 +5,20 @@ set -euo pipefail; IFS=$'\n\t'
 # 기본 유틸리티들 설치
 #
 sudo yum update -y
-sudo yum install -y htop tmux git 'https://www.atoptool.nl/download/atop-2.4.0-1.x86_64.rpm'
+sudo yum install -y \
+  htop \
+  tmux \
+  git \
+  yum-cron \
+  'https://www.atoptool.nl/download/atop-2.4.0-1.x86_64.rpm'
 sudo amazon-linux-extras install -y vim
+
+#
+# yum-cron 설치
+#
+sudo sed -i "s/update_cmd = default/update_cmd = security/" /etc/yum/yum-cron-hourly.conf
+sudo sed -i "s/update_cmd = default/update_cmd = security/" /etc/yum/yum-cron.conf
+sudo systemctl enable yum-cron
 
 #
 # ripgrep 설치
