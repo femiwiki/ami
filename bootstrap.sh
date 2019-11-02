@@ -23,13 +23,14 @@ sudo systemctl enable yum-cron
 #
 # ripgrep 설치
 #
-curl -Lo /tmp/ripgrep.tgz 'https://github.com/BurntSushi/ripgrep/releases/download/0.10.0/ripgrep-0.10.0-x86_64-unknown-linux-musl.tar.gz'
+RIPGREP_VERSION='11.0.2'
+curl -Lo /tmp/ripgrep.tgz "https://github.com/BurntSushi/ripgrep/releases/download/${RIPGREP_VERSION}/ripgrep-${RIPGREP_VERSION}-x86_64-unknown-linux-musl.tar.gz"
 sudo tar -x \
   --strip-component=1 \
   -C /usr/local/bin/ \
   --no-same-owner \
   -f /tmp/ripgrep.tgz \
-  ripgrep-0.10.0-x86_64-unknown-linux-musl/rg
+  "ripgrep-${RIPGREP_VERSION}-x86_64-unknown-linux-musl/rg"
 rm /tmp/ripgrep.tgz
 
 #
