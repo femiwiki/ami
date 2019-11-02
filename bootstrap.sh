@@ -37,7 +37,7 @@ rm /tmp/ripgrep.tgz
 # 도커 설치
 # Reference: https://docs.aws.amazon.com/AmazonECS/latest/developerguide/docker-basics.html#install_docker
 #
-sudo amazon-linux-extras install -y docker
+sudo amazon-linux-extras install -y docker=18.06.1
 sudo systemctl enable docker
 sudo usermod -a -G docker ec2-user
 # 이후 로그아웃한 뒤 재로그인
