@@ -16,8 +16,8 @@ sudo yum install -y \
 #
 # yum-cron 설치
 #
-sudo sed -i "s/update_cmd = default/update_cmd = security/" /etc/yum/yum-cron-hourly.conf
-sudo sed -i "s/update_cmd = default/update_cmd = security/" /etc/yum/yum-cron.conf
+sudo sed -i "s/update_cmd = default/update_cmd = minimal-security/" /etc/yum/yum-cron-hourly.conf
+sudo sed -i "s/update_cmd = default/update_cmd = minimal-security/" /etc/yum/yum-cron.conf
 sudo systemctl enable yum-cron
 
 #
