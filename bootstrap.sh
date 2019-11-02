@@ -6,12 +6,12 @@ set -euo pipefail; IFS=$'\n\t'
 #
 sudo yum update -y
 sudo yum install -y \
+  vim-enhanced \
   htop \
   tmux \
   git \
   yum-cron \
   'https://www.atoptool.nl/download/atop-2.4.0-1.x86_64.rpm'
-sudo amazon-linux-extras install -y vim
 
 #
 # yum-cron 설치
