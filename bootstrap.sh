@@ -11,7 +11,8 @@ sudo yum install -y \
   tmux \
   git \
   yum-cron \
-  'https://www.atoptool.nl/download/atop-2.4.0-1.x86_64.rpm'
+  'https://www.atoptool.nl/download/atop-2.4.0-1.x86_64.rpm' \
+  ec2-instance-connect
 
 #
 # yum-cron 설치
