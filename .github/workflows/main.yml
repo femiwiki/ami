@@ -1,0 +1,24 @@
+name: packer build
+
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v1
+    - name: Install Packer
+      env:
+        PACKER_VERSION: 1.4.5
+      run: |
+        curl -LO "https://releases.hashicorp.com/packer/${PACKER_VERSION}/packer_${PACKER_VERSION}_linux_amd64.zip" &&\
+        sudo unzip "packer_${PACKER_VERSION}_linux_amd64.zip" -d /usr/local/bin/ &&\
+        rm "packer_${PACKER_VERSION}_linux_amd64.zip"
+    - name: Packer build
+      env:
+        AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        AWS_DEFAULT_REGION: ap-northeast-1
+      run: sudo packer build femiwiki-base.json
